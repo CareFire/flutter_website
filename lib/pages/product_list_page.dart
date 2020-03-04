@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_website/style/color.dart';
 import '../model/product.dart';
-import '../services/product.dart';
 import '../style/index.dart';
 import 'product_detail_page.dart';
 class ProductResultListWidget extends StatelessWidget{
