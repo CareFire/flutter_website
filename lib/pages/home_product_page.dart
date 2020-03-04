@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/product.dart';
+import 'product_detail_page.dart';
 
 class HomeProductPage  extends StatelessWidget{
   final ProductListModal list;
@@ -20,7 +21,15 @@ class HomeProductPage  extends StatelessWidget{
     double imageWidth = deviceWidth * 110.0 / 360;
 
     List<Widget> listWidgets = list.data.map((i){
-      return Container(
+      return GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProductDetail(item:i)),
+          );
+        },
+        child: Container(
         width: itemWidth,
         margin: EdgeInsets.only(bottom:5,left:2),
         padding: EdgeInsets.only(top:10,left:2,bottom:7),
@@ -51,6 +60,7 @@ class HomeProductPage  extends StatelessWidget{
             ),
           ],
         ),
+      ),
       );
     }).toList();
 
